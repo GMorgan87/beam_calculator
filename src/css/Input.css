@@ -1,0 +1,19 @@
+.inputs {
+    margin: 2vh auto;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+.defl-input {
+    width: 4em;
+}

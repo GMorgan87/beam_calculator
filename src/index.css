@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+}
+
+:root {
+  --background: #FFFCFF;
+  --button: #50514F;
+  --hover: #247BA0;
+  --col4: #E6E8E6;
+  --col5: #CED0CE;
 }
 
 code {
