@@ -1,23 +1,29 @@
 .find-check {
-    width: 75%;
-    height: 20vh;
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
 }
 
 .find-check ul {
     display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    margin: 0;
     padding: 0;
     list-style-type: none;
     justify-content: space-around;
 }
 
 .find-check li{
-    width: 25vw;
-    padding: 1.5em 0;
+    width: 45%;
+    height: 10vh;
+    line-height: 10vh;
+    margin: 0.5vh;
+    padding: 1.2em 0;
     font-size: 1.5em;
+    font-weight: bold;
     color: white;
     background-color: var(--button);
-    border-radius: 1em;
+    min-width: 200px;
 }
 
 .find-check li:hover{

@@ -1,0 +1,14 @@
+.header {
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.header h1 {
+    font-size: 5vw;
+    margin: 0;
+}
+
+.header a {
+    text-decoration: none;
+    color: black
+}
