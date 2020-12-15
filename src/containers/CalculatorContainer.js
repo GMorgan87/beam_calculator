@@ -21,13 +21,23 @@ class CalculatorContainer extends Component {
          grade: 355,
          safety: 1,
          XorY: '',
-         found: false
+         found: false,
+         beams: []
       }
     }
 
     checkSelect = () => this.setState({find:false})
     findSelect = () => this.setState({find:true})
-    typeSelect = (e) => this.setState({type:e.target.id})
+
+    typeSelect = (e) => {
+      this.setState({type:e.target.id})
+      fetch(`http://resteel.herokuapp.com/${e.target.id}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({beams: data})
+      })
+    }
+
     orientationSelect = (e) => this.setState({XorY:e.target.id})
     inputChange = (e) => {
         this.setState({[e.target.name]: parseInt(e.target.value)})
@@ -77,7 +87,7 @@ class CalculatorContainer extends Component {
             this.state.find?
                 <Find inputChange={this.inputChange} findBeam={this.findBeam} foundBeam={this.state.foundBeam}/>
                 :
-                <Check inputChange={this.inputChange} type={this.state.type}/>
+                <Check inputChange={this.inputChange} beams={this.state.beams}/>
             :
             <div></div>  
         }

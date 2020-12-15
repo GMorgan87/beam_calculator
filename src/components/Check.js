@@ -1,32 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-const Check = ({inputChange, type}) => {
+const Check = ({inputChange, beams}) => {
 
-  const [beams, setBeams] = useState([])
-
-  useEffect(() => {
-    fetch(`http://resteel.herokuapp.com/${type}`)
-    .then(res => res.json())
-    .then(data => setBeams(data))
-  })
-
-  const getBeams = () => {
-    return beams.map(beam => <option value={beam.id}>{beam.desc}</option>)
-  }
+  let getBeams =  beams.map(beam => <option value={beam.id}>{beam.desc}</option>)
 
   return (
     <>
       <h2>Check Beam</h2>
-      {beams.length>0?
+      {getBeams.length>0?
       <label>Select Beam:
         <select name="beam">
-          {getBeams()}
+          {getBeams}
         </select>
       </label>
       :
-      <div></div>
+      <div>Fetching Beams...</div>
       }
-
     </>
   )
 }
