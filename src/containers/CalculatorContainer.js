@@ -37,10 +37,6 @@ class CalculatorContainer extends Component {
       })
     }
 
-    // xOrYSelect = (value) => {
-    //   this.setState({XorY:value})
-    // }
-
     inputChange = (e) => {
       if (e.target.name==='XorY'){
         this.setState({[e.target.name]: e.target.value})
@@ -89,7 +85,7 @@ class CalculatorContainer extends Component {
         }
         {this.state.type!==""?
             this.state.find?
-                <Find inputChange={this.inputChange} xOrYSelect={this.xOrYSelect} findBeam={this.findBeam} foundBeam={this.state.foundBeam}/>
+                <Find inputChange={this.inputChange}  findBeam={this.findBeam} XorY={this.state.XorY} foundBeam={this.state.foundBeam}/>
                 :
                 <Check inputChange={this.inputChange} beams={this.state.beams}/>
             :
