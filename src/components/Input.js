@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/Input.css'
 
 const Input = ({inputChange, findBeam}) => {
+
   return (
     <form className='inputs' onSubmit={findBeam}> 
         <label>Span (L):
@@ -18,6 +19,11 @@ const Input = ({inputChange, findBeam}) => {
         <br/>
         <label>Safety Factor:
           <input onChange={inputChange}  type="number" name="safety" defaultValue="1" steps="0.01" className="safety-input" required/>
+        </label>
+        <br/>
+        <label>Load Axis: 
+            <input onClick={inputChange} type="radio" value="x" name="XorY" />X
+            <input onClick={inputChange} type="radio" value="y" name="XorY" />Y
         </label>
         <br/>
         <label>Allowable Deflection: L/

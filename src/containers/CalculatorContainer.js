@@ -4,7 +4,6 @@ import TypeSelect from '../components/TypeSelect'
 import Find from '../components/Find'
 import Check from '../components/Check'
 import '../css/CalculatorContainer.css'
-import OrientationSelector from '../components/OrientationSelector'
 
 class CalculatorContainer extends Component {
 
@@ -20,7 +19,7 @@ class CalculatorContainer extends Component {
          defl: 250,
          grade: 355,
          safety: 1,
-         XorY: '',
+         XorY: 'x',
          found: false,
          beams: []
       }
@@ -38,10 +37,18 @@ class CalculatorContainer extends Component {
       })
     }
 
-    orientationSelect = (e) => this.setState({XorY:e.target.id})
+    // xOrYSelect = (value) => {
+    //   this.setState({XorY:value})
+    // }
+
     inputChange = (e) => {
+      if (e.target.name==='XorY'){
+        this.setState({[e.target.name]: e.target.value})
+      } else {
         this.setState({[e.target.name]: parseInt(e.target.value)})
+      }
     }
+
     findBeam = (e) => {
         e.preventDefault()
         const d = this.state.defl
@@ -76,16 +83,13 @@ class CalculatorContainer extends Component {
             <div></div>
         }
         {this.state.find!==''?
-            <div>
                 <TypeSelect typeSelect={this.typeSelect} selected={this.state.type}/>
-                <OrientationSelector orientationSelect={this.orientationSelect} XorY={this.state.XorY}/>
-            </div>
             :
             <div></div>
         }
-        {this.state.type!=="" && this.state.XorY!==""?
+        {this.state.type!==""?
             this.state.find?
-                <Find inputChange={this.inputChange} findBeam={this.findBeam} foundBeam={this.state.foundBeam}/>
+                <Find inputChange={this.inputChange} xOrYSelect={this.xOrYSelect} findBeam={this.findBeam} foundBeam={this.state.foundBeam}/>
                 :
                 <Check inputChange={this.inputChange} beams={this.state.beams}/>
             :
