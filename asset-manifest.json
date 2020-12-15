@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/beam_calculator/static/css/main.5f2f7865.chunk.css",
+    "main.js": "/beam_calculator/static/js/main.6cd1b02f.chunk.js",
+    "main.js.map": "/beam_calculator/static/js/main.6cd1b02f.chunk.js.map",
+    "runtime-main.js": "/beam_calculator/static/js/runtime-main.8a04c823.js",
+    "runtime-main.js.map": "/beam_calculator/static/js/runtime-main.8a04c823.js.map",
+    "static/css/2.3ca2e7a5.chunk.css": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css",
+    "static/js/2.4e85a87d.chunk.js": "/beam_calculator/static/js/2.4e85a87d.chunk.js",
+    "static/js/2.4e85a87d.chunk.js.map": "/beam_calculator/static/js/2.4e85a87d.chunk.js.map",
+    "static/js/3.84625530.chunk.js": "/beam_calculator/static/js/3.84625530.chunk.js",
+    "static/js/3.84625530.chunk.js.map": "/beam_calculator/static/js/3.84625530.chunk.js.map",
+    "index.html": "/beam_calculator/index.html",
+    "static/css/2.3ca2e7a5.chunk.css.map": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css.map",
+    "static/css/main.5f2f7865.chunk.css.map": "/beam_calculator/static/css/main.5f2f7865.chunk.css.map",
+    "static/js/2.4e85a87d.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.4e85a87d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a04c823.js",
+    "static/css/2.3ca2e7a5.chunk.css",
+    "static/js/2.4e85a87d.chunk.js",
+    "static/css/main.5f2f7865.chunk.css",
+    "static/js/main.6cd1b02f.chunk.js"
+  ]
+}
