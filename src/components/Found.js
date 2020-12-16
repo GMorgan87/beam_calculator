@@ -33,8 +33,9 @@ const Found = ({foundBeam}) => {
       </div>
 
       <div className="calcs-display">
-        <h3>Calculations</h3>
-      
+        <h3 className="beam-header">CALCULATIONS</h3>
+        <p>Max. Deflection =</p>
+        <p>Max. Stress =</p>
       </div>
 
     </div>
