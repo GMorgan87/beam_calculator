@@ -50,6 +50,7 @@ input[type=number] {
 
 .radios-wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .radios {

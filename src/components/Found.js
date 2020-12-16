@@ -17,7 +17,7 @@ const Found = ({foundBeam}) => {
               <td className="t-right">{foundBeam.y}mm</td>
             </tr>
             <tr>
-              <td className="t-left">Wall Thickness:</td>
+              <td className="t-left">Wall Thk:</td>
               <td className="t-right">{foundBeam.thk}mm</td>
             </tr>
             <tr>
@@ -25,7 +25,7 @@ const Found = ({foundBeam}) => {
               <td className="t-right">{foundBeam.mass}kg</td>
             </tr>
             <tr>
-              <td className="t-left">Cross Sectional Area:</td>
+              <td className="t-left">C.S.A.:</td>
               <td className="t-right">{foundBeam.csa}mm<sup>2</sup></td>
             </tr>
           </tbody>

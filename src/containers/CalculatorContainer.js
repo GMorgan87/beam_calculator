@@ -30,7 +30,7 @@ class CalculatorContainer extends Component {
 
     typeSelect = (e) => {
       this.setState({type:e.target.id})
-      fetch(`http://resteel.herokuapp.com/${e.target.id}`)
+      fetch(`https://resteel.herokuapp.com/${e.target.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({beams: data})
@@ -55,7 +55,7 @@ class CalculatorContainer extends Component {
         const minZ = Math.ceil(((5*F*L)/(17*G))/1000)
         console.log('minI :>> ', minI);
         console.log('minZ :>> ', minZ);
-        fetch(`http://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
+        fetch(`https://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
         .then(res => res.json())
         .then(data => {
 
@@ -65,7 +65,7 @@ class CalculatorContainer extends Component {
     }
 
     componentDidMount(){
-        fetch('http://resteel.herokuapp.com/')
+        fetch('https://resteel.herokuapp.com/')
             .then(res => res.json)
             .then(data => console.log('ping'))
     }
