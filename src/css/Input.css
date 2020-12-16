@@ -1,7 +1,41 @@
 .inputs {
     margin: 2vh auto;
-    width: 50vw;
+    width: 90%;
+    max-width: 500px;
     justify-content: space-between;
+    text-align: left;
+}
+
+input{
+  width: 100%;
+  padding: 1px 0;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: sans-serif;
+  font-size: 1em;
+  text-align: right;
+}
+
+.inputs label input {
+  display: flex;
+}
+
+.input-wrapper {
+  margin: 1vh 0;
+}
+
+.radios-wrapper {
+  margin: 1vh 0;
+}
+
+.defl-wrapper {
+  display: flex;
+  margin: 1vh 0;
+  justify-content: space-between;
+}
+
+.defl-input {
+  display: inline
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -14,6 +48,31 @@ input[type=number] {
     -moz-appearance: textfield;
   }
 
+.radios-wrapper {
+  display: flex;
+}
+
+.radios {
+  text-align: center;
+}
+
+.radios input {
+  width: auto;
+}
+
 .defl-input {
-    width: 4em;
+    width: 3em;
+}
+
+.calc-button {
+  width: 100%;
+  background-color: var(--button);
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1vh auto;
+  border: 1px solid var(--button);
+  text-align: center;
+  padding: 0.8em 0;
 }
