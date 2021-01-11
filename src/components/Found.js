@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Found.css'
 
-const Found = ({foundBeam}) => {
+const Found = ({foundBeam, calcObject}) => {
   return (
     <div className="results">
       <div className="beam-display">
@@ -34,8 +34,13 @@ const Found = ({foundBeam}) => {
 
       <div className="calcs-display">
         <h3 className="beam-header">CALCULATIONS</h3>
-        <p>Max. Deflection =</p>
-        <p>Max. Stress =</p>
+        <p>F = W x 9.81 x Safety Factor = {calcObject.force}N</p>
+        <p>L = {calcObject.span}</p>
+        <p>E = 205000</p>
+        <p>I = {foundBeam.ixx*10000}mm<sup>4</sup> </p>
+        <p>Z = {foundBeam.zxx*1000}mm<sup>3</sup></p>
+        <p>Max. Deflection = (WxL<sup>3</sup>)/(48xExI) = {calcObject.deflection}mm</p>
+        <p>Max. Stress = (WL)/(4Z) = {calcObject.stress}MPa</p>
       </div>
 
     </div>

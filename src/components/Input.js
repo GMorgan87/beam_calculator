@@ -6,19 +6,19 @@ const Input = ({inputChange, findBeam, XorY}) => {
   return (
     <form className='inputs' onSubmit={findBeam}>
         <div className='input-wrapper'>
-          <label for="span">Span (mm):</label>
+          <label htmlFor="span">Span (mm):</label>
           <input onChange={inputChange} type='number' name='span' required/>
         </div>
         <div className='input-wrapper'>
-          <label for="mass">Weight (kg):</label>
+          <label htmlFor="mass">Weight (kg):</label>
           <input onChange={inputChange} type='number' name='mass' required/>
         </div>
         <div className='input-wrapper'>
-          <label for="grade">Steel Grade:</label>
+          <label htmlFor="grade">Steel Grade:</label>
           <input onChange={inputChange}  type="number" name="grade" defaultValue="355" className="grade-input" required/>
         </div>
         <div className='input-wrapper'>
-          <label for="safety">Safety Factor:</label>
+          <label htmlFor="safety">Safety Factor:</label>
           <input onChange={inputChange}  type="number" name="safety" defaultValue="1" steps="0.01" className="safety-input" required/>
         </div>
         <div className='defl-wrapper'>
@@ -28,10 +28,10 @@ const Input = ({inputChange, findBeam, XorY}) => {
             </div>
         </div>
         <div className='radios-wrapper'>
-          <label for="XorY">Load Axis:</label>
+          <label htmlFor="XorY">Load Axis:</label>
           <div className="radios">
-            <input onClick={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/>X
-            <input onClick={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/>Y
+            <div className="radio"><input onClick={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/>X</div>
+            <div className="radio"><input onClick={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/>Y</div>
           </div>
         </div>
         <input type='submit' value="CALCULATE" className="calc-button"/>

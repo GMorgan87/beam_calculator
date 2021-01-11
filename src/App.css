@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  width: 80%;
+  width: 90%;
+  max-width: 600px;
   margin: 0 auto;
   font-family: sans-serif;
 }
@@ -9,5 +10,11 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.svg {
+  height: 50px;
+  width: 50px;
+  color: white;
 }
 

@@ -54,10 +54,18 @@ input[type=number] {
 }
 
 .radios {
+  display: flex;
   text-align: center;
+  width: 20%
 }
 
-.radios input {
+.radio {
+  display: flex;
+  width: 50%
+}
+
+.radio input{
+  margin: 0 0.5vw;
   width: auto;
 }
 

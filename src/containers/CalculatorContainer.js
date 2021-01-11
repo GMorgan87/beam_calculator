@@ -5,12 +5,14 @@ import Find from '../components/Find'
 import Check from '../components/Check'
 import '../css/CalculatorContainer.css'
 
+
 class CalculatorContainer extends Component {
 
     constructor(props) {
       super(props)
     
       this.state = {
+          showSelect: false,
          find: '',
          check: false,
          type: '',
@@ -21,12 +23,13 @@ class CalculatorContainer extends Component {
          safety: 1,
          XorY: 'x',
          found: false,
-         beams: []
+         beams: [],
+         calcObject: {}
       }
     }
 
-    checkSelect = () => this.setState({find:false})
-    findSelect = () => this.setState({find:true})
+    checkSelect = () => this.setState({find:false, showSelect: true})
+    findSelect = () => this.setState({find:true, showSelect: true})
 
     typeSelect = (e) => {
       this.setState({type:e.target.id})
@@ -45,8 +48,35 @@ class CalculatorContainer extends Component {
       }
     }
 
-    findBeam = (e) => {
+  fetchBeams = (minI, minZ) => {
+    console.log('fetchBeam')
+    fetch(`https://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then(data => {
+        console.log('fetched')
+        console.log('api data: ', data)
+          data.i = this.getBeamI(data)
+          data.z = this.getBeamZ(data)
+          this.setState({foundBeam:data,
+                          found:true})
+          this.getCalcs();
+      })
+      .catch(err => {
+        console.log('err: ', err)
+      })
+  }
+
+
+   findBeam = (e) => {
         e.preventDefault()
+        console.log('findBeam')
+        this.setState({showSelect: false})
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.mass*9.81*this.state.safety
@@ -55,15 +85,42 @@ class CalculatorContainer extends Component {
         const minZ = Math.ceil(((5*F*L)/(17*G))/1000)
         console.log('minI :>> ', minI);
         console.log('minZ :>> ', minZ);
-        fetch(`https://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
-        .then(res => res.json())
-        .then(data => {
-
-            this.setState({foundBeam:data,
-                            found:true})
-        })
+        this.fetchBeams(minI, minZ)
     }
 
+    getBeamWeight = () => this.state.foundBeam.mass * this.state.span
+
+    getCalcs = () => {
+      console.log('getCalcs')
+      const force = this.state.mass * 9.81 * this.state.safety
+      // const force = this.state.mass * 9.81 * this.state.safety
+      let results = {
+        span: this.state.span,
+        mass: this.state.mass,
+        force: force,
+        safety: this.state.safety,
+        stress: ((force*this.state.span)/(4*this.state.foundBeam.z*1000)).toFixed(2),
+        deflection: ((force*this.state.span**3)/(48*205000*this.state.foundBeam.i*10000)).toFixed(2)
+      }
+        this.setState({calcObject:results})
+        }
+
+    getBeamI = (beam) => {
+      if (this.state.XorY === 'x') {
+        return beam.ixx
+      } else {
+        return beam.iyy
+      }
+    }
+
+    getBeamZ = (beam) => {
+      if (this.state.XorY === 'x') {
+        return beam.zxx
+      } else {
+        return beam.zyy
+      }
+    }
+    
     componentDidMount(){
         fetch('https://resteel.herokuapp.com/')
             .then(res => res.json)
@@ -78,14 +135,14 @@ class CalculatorContainer extends Component {
             :
             <div></div>
         }
-        {this.state.find!==''?
+        {this.state.showSelect?
                 <TypeSelect typeSelect={this.typeSelect} selected={this.state.type}/>
             :
             <div></div>
         }
         {this.state.type!==""?
             this.state.find?
-                <Find inputChange={this.inputChange}  findBeam={this.findBeam} XorY={this.state.XorY} foundBeam={this.state.foundBeam}/>
+                <Find inputChange={this.inputChange} findBeam={this.findBeam} XorY={this.state.XorY} foundBeam={this.state.foundBeam} calcObject={this.state.calcObject}/>
                 :
                 <Check inputChange={this.inputChange} beams={this.state.beams}/>
             :
