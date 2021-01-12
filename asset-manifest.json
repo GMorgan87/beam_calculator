@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/beam_calculator/static/css/main.983b49d6.chunk.css",
-    "main.js": "/beam_calculator/static/js/main.83d1c8a9.chunk.js",
-    "main.js.map": "/beam_calculator/static/js/main.83d1c8a9.chunk.js.map",
+    "main.js": "/beam_calculator/static/js/main.bc738dd6.chunk.js",
+    "main.js.map": "/beam_calculator/static/js/main.bc738dd6.chunk.js.map",
     "runtime-main.js": "/beam_calculator/static/js/runtime-main.8a04c823.js",
     "runtime-main.js.map": "/beam_calculator/static/js/runtime-main.8a04c823.js.map",
     "static/css/2.3ca2e7a5.chunk.css": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.4e85a87d.chunk.js": "/beam_calculator/static/js/2.4e85a87d.chunk.js",
-    "static/js/2.4e85a87d.chunk.js.map": "/beam_calculator/static/js/2.4e85a87d.chunk.js.map",
+    "static/js/2.611503ad.chunk.js": "/beam_calculator/static/js/2.611503ad.chunk.js",
+    "static/js/2.611503ad.chunk.js.map": "/beam_calculator/static/js/2.611503ad.chunk.js.map",
     "static/js/3.84625530.chunk.js": "/beam_calculator/static/js/3.84625530.chunk.js",
     "static/js/3.84625530.chunk.js.map": "/beam_calculator/static/js/3.84625530.chunk.js.map",
     "index.html": "/beam_calculator/index.html",
     "static/css/2.3ca2e7a5.chunk.css.map": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css.map",
     "static/css/main.983b49d6.chunk.css.map": "/beam_calculator/static/css/main.983b49d6.chunk.css.map",
-    "static/js/2.4e85a87d.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.4e85a87d.chunk.js.LICENSE.txt",
-    "static/media/CHS.264f6092.svg": "/beam_calculator/static/media/CHS.264f6092.svg",
+    "static/js/2.611503ad.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.611503ad.chunk.js.LICENSE.txt",
+    "static/media/CHS.481c967b.svg": "/beam_calculator/static/media/CHS.481c967b.svg",
     "static/media/PFC.a6a7760d.svg": "/beam_calculator/static/media/PFC.a6a7760d.svg",
-    "static/media/RHS.03ab193e.svg": "/beam_calculator/static/media/RHS.03ab193e.svg",
-    "static/media/SHS.64f6dcbd.svg": "/beam_calculator/static/media/SHS.64f6dcbd.svg",
+    "static/media/RHS.8368783e.svg": "/beam_calculator/static/media/RHS.8368783e.svg",
+    "static/media/SHS.043b7f73.svg": "/beam_calculator/static/media/SHS.043b7f73.svg",
     "static/media/UB.c950c6e1.svg": "/beam_calculator/static/media/UB.c950c6e1.svg",
-    "static/media/UC.c66edba6.svg": "/beam_calculator/static/media/UC.c66edba6.svg"
+    "static/media/UC.75276d6f.svg": "/beam_calculator/static/media/UC.75276d6f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8a04c823.js",
     "static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.4e85a87d.chunk.js",
+    "static/js/2.611503ad.chunk.js",
     "static/css/main.983b49d6.chunk.css",
-    "static/js/main.83d1c8a9.chunk.js"
+    "static/js/main.bc738dd6.chunk.js"
   ]
 }
