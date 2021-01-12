@@ -19,7 +19,7 @@ const Input = ({inputChange, findBeam, XorY}) => {
         </div>
         <div className='input-wrapper'>
           <label htmlFor="safety">Safety Factor:</label>
-          <input onChange={inputChange}  type="number" name="safety" defaultValue="1" steps="0.01" className="safety-input" required/>
+          <input onChange={inputChange}  type="number" name="safety" defaultValue="1" step="0.01" className="safety-input" required/>
         </div>
         <div className='defl-wrapper'>
           <label>Allowable Deflection:</label> 

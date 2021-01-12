@@ -43,6 +43,8 @@ class CalculatorContainer extends Component {
     inputChange = (e) => {
       if (e.target.name==='XorY'){
         this.setState({[e.target.name]: e.target.value})
+      } else if (e.target.name==='safety') {
+        this.setState({[e.target.name]: parseFloat(e.target.value)})
       } else {
         this.setState({[e.target.name]: parseInt(e.target.value)})
       }
@@ -71,7 +73,6 @@ class CalculatorContainer extends Component {
         console.log('err: ', err)
       })
   }
-
 
    findBeam = (e) => {
         e.preventDefault()
