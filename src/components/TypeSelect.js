@@ -37,7 +37,7 @@ const TypeSelect = ({typeSelect, selected}) => {
             <img src={ub} alt="UB" className="svg"/>UB
         </li>
       </Tippy>
-      <Tippy content="Parallel Flange CHannel">
+      <Tippy content="Parallel Flange Channel">
         <li onClick={typeSelect} className={selected === 'pfc' ? 'selected': ''} id='pfc'>
             <img src={pfc} alt="PFC" className="svg"/>UB
         </li>

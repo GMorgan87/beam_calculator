@@ -39,8 +39,11 @@ const Found = ({foundBeam, calcObject}) => {
         <p>E = 205000</p>
         <p>I = {foundBeam.ixx*10000}mm<sup>4</sup> </p>
         <p>Z = {foundBeam.zxx*1000}mm<sup>3</sup></p>
-        <p>Max. Deflection = (WxL<sup>3</sup>)/(48xExI) = {calcObject.deflection}mm</p>
-        <p>Max. Stress = (WL)/(4Z) = {calcObject.stress}MPa</p>
+        <p>Max. Deflection = (WxL<sup>3</sup>)/(48xExI) = <strong>{calcObject.deflection}mm</strong></p>
+        <p>Allowable deflection = {(calcObject.span/calcObject.defl).toFixed(2)}mm</p>
+        <p>Max. Deflection = (WxL<sup>3</sup>)/(48xExI) = <strong>{calcObject.deflection}mm</strong></p>
+        <p>Max. Stress = (WL)/(4Z) = <strong>{calcObject.stress}MPa</strong></p>
+        <p>Allowable Stress = {(calcObject.grade*0.85).toFixed(2)}MPa</p>
       </div>
 
     </div>

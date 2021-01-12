@@ -100,6 +100,8 @@ class CalculatorContainer extends Component {
         mass: this.state.mass,
         force: force,
         safety: this.state.safety,
+        defl: this.state.defl,
+        grade: this.state.grade,
         stress: ((force*this.state.span)/(4*this.state.foundBeam.z*1000)).toFixed(2),
         deflection: ((force*this.state.span**3)/(48*205000*this.state.foundBeam.i*10000)).toFixed(2)
       }
