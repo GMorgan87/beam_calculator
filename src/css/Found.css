@@ -3,18 +3,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 90%;
+    max-width: 500px;
     margin: 1vh auto;
 }
 
 .beam-display {
     border: 1px solid black;
-    width: 49%;
+    width: 100%;
     min-width: 230px;
 }
 
 .calcs-display {
     border: 1px solid black;
-    width: 49%;
+    width: 100%;
     min-width: 250px;
 }
 
@@ -33,4 +34,24 @@
 .t-right {
     text-align: left;
     width: 50%;
+}
+
+.calc-table {
+    margin: 0 auto;
+}
+
+.c-left {
+    text-align: left;
+}
+.c-right {
+    text-align: right;
+}
+
+.calc-top {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.calc-bottom {
+    text-align: center;
 }
