@@ -5,7 +5,6 @@ import Find from '../components/Find'
 import Check from '../components/Check'
 import '../css/CalculatorContainer.css'
 
-
 class CalculatorContainer extends Component {
 
     constructor(props) {
@@ -34,6 +33,7 @@ class CalculatorContainer extends Component {
 
     typeSelect = (e) => {
       this.setState({type:e.target.id})
+      console.log(`https://resteel.herokuapp.com/${e.target.id}`)
       fetch(`https://resteel.herokuapp.com/${e.target.id}`)
       .then(res => res.json())
       .then(data => {

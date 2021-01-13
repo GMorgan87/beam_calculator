@@ -5,7 +5,6 @@ import CheckInput from './CheckInput'
 const Check = ({inputChange, beams, checkBeam, beamSelectChange, XorY, beam, calcObject}) => {
 
   
-
   return (
     <>
       <h2>Check Beam</h2>
