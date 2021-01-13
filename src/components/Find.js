@@ -2,13 +2,13 @@ import React from 'react'
 import Found from './Found'
 import Input from './Input'
 
-const Find = ({inputChange, findBeam, foundBeam, XorY, calcObject}) => {
+const Find = ({inputChange, findBeam, beam, XorY, calcObject}) => {
   return (
     <>
       <h3>Find Beam</h3>
       <Input inputChange={inputChange} findBeam={findBeam} XorY={XorY}/>
-      {foundBeam?
-        <Found foundBeam={foundBeam} calcObject={calcObject}/>
+      {beam?
+        <Found beam={beam} calcObject={calcObject}/>
         :
         <div></div>
       }

@@ -1,17 +1,17 @@
 import React from 'react'
 import '../css/Input.css'
 
-const Input = ({ beams, inputChange, findBeam, XorY}) => {
+const Input = ({ beams, inputChange, checkBeam, XorY, beamSelectChange}) => {
 
-  let getBeams =  beams.map((beam, index) => <option value={beam.id} key={index}>{beam.desc}</option>)
+  let getBeams =  beams.map((beam, index) => <option value={index} key={index}>{beam.desc}</option>)
 
   return (
-    <form className='inputs' onSubmit={findBeam}>
+    <form className='inputs' onSubmit={checkBeam}>
 
         {getBeams.length>0?
           <div className='input-wrapper'>
             <label htmlFor="beam">Select Beam:</label>
-            <select name="beam" onChange={inputChange}>
+            <select name="beam" onChange={beamSelectChange}>
               {getBeams}
             </select>
           </div>

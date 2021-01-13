@@ -24,6 +24,7 @@ class CalculatorContainer extends Component {
          XorY: 'x',
          found: false,
          beams: [],
+         selectedBeam: {},
          calcObject: {}
       }
     }
@@ -50,6 +51,13 @@ class CalculatorContainer extends Component {
       }
     }
 
+    beamSelectChange = (e) => {
+      let beam = this.state.beams[e.target.value]
+      beam.i = this.getBeamI(beam)
+      beam.z = this.getBeamZ(beam)
+      this.setState({selectedBeam: beam})
+    }
+
   fetchBeams = (minI, minZ) => {
     console.log('fetchBeam')
     fetch(`https://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
@@ -65,7 +73,7 @@ class CalculatorContainer extends Component {
         console.log('api data: ', data)
           data.i = this.getBeamI(data)
           data.z = this.getBeamZ(data)
-          this.setState({foundBeam:data,
+          this.setState({beam:data,
                           found:true})
           this.getCalcs();
       })
@@ -89,7 +97,17 @@ class CalculatorContainer extends Component {
         this.fetchBeams(minI, minZ)
     }
 
-    getBeamWeight = () => this.state.foundBeam.mass * this.state.span
+    checkBeam = (e) => {
+      e.preventDefault()
+      console.log('Check Beam')
+      this.setState({showSelect: false})
+      this.setState({beam: this.state.selectedBeam},
+        () => {
+          this.getCalcs()
+        })
+    }
+
+    getBeamWeight = () => this.state.beam.mass * this.state.span
 
     getCalcs = () => {
       console.log('getCalcs')
@@ -102,11 +120,11 @@ class CalculatorContainer extends Component {
         safety: this.state.safety,
         defl: this.state.defl,
         grade: this.state.grade,
-        stress: ((force*this.state.span)/(4*this.state.foundBeam.z*1000)).toFixed(2),
-        deflection: ((force*this.state.span**3)/(48*205000*this.state.foundBeam.i*10000)).toFixed(2)
+        stress: ((force*this.state.span)/(4*this.state.beam.z*1000)).toFixed(2),
+        deflection: ((force*this.state.span**3)/(48*205000*this.state.beam.i*10000)).toFixed(2)
       }
         this.setState({calcObject:results})
-        }
+    }
 
     getBeamI = (beam) => {
       if (this.state.XorY === 'x') {
@@ -145,9 +163,9 @@ class CalculatorContainer extends Component {
         }
         {this.state.type!==""?
             this.state.find?
-                <Find inputChange={this.inputChange} findBeam={this.findBeam} XorY={this.state.XorY} foundBeam={this.state.foundBeam} calcObject={this.state.calcObject}/>
+                <Find inputChange={this.inputChange} findBeam={this.findBeam} XorY={this.state.XorY} beam={this.state.beam} calcObject={this.state.calcObject}/>
                 :
-                <Check inputChange={this.inputChange} beams={this.state.beams}/>
+                <Check inputChange={this.inputChange} checkBeam={this.checkBeam} XorY={this.state.XorY} beams={this.state.beams} beamSelectChange={this.beamSelectChange} beam={this.state.beam} calcObject={this.state.calcObject}/>
             :
             <div></div>  
         }

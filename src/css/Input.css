@@ -6,7 +6,7 @@
     text-align: left;
 }
 
-input{
+input {
   width: 100%;
   padding: 1px 0;
   border: none;
@@ -16,7 +16,7 @@ input{
   text-align: right;
 }
 
-select{
+select {
   width: 100%;
   padding: 1px 0;
   font-family: sans-serif;
@@ -24,7 +24,7 @@ select{
   text-align-last: right;
 }
 
-option{
+option {
   font-family: sans-serif;
   font-size: 1em;
   direction: rtl;
@@ -78,7 +78,7 @@ input[type=number] {
   width: 50%
 }
 
-.radio input{
+.radio input {
   margin: 0 0.5vw;
   width: auto;
 }
