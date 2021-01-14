@@ -1,7 +1,7 @@
 import React from 'react'
-import '../css/Found.css'
+import '../css/Results.css'
 
-const Found = ({beam, calcObject, deflMod, stressMod}) => {
+const Results = ({beam, calcObject, deflMod, stressMod}) => {
   return (
     <div className="results">
       <div className="beam-display">
@@ -110,4 +110,4 @@ const Found = ({beam, calcObject, deflMod, stressMod}) => {
   )
 }
 
-export default Found
+export default Results

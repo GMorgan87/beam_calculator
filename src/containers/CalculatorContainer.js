@@ -4,7 +4,7 @@ import TypeSelect from '../components/TypeSelect'
 import FindInput from '../components/FindInput'
 import CheckInput from '../components/CheckInput'
 import '../css/CalculatorContainer.css'
-import Found from '../components/Found'
+import Results from '../components/Results'
 
 
 class CalculatorContainer extends Component {
@@ -208,7 +208,7 @@ class CalculatorContainer extends Component {
             <div></div>  
         }
         {this.state.beam?
-          <Found beam={this.state.beam}
+          <Results beam={this.state.beam}
           calcObject={this.state.calcObject}
           stressMod={this.state.stressMod[this.state.fixSim][this.state.evenPoint]}
           deflMod={this.state.deflMod[this.state.fixSim][this.state.evenPoint]}/>
