@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import FindOrCheck from '../components/FindOrCheck'
 import TypeSelect from '../components/TypeSelect'
-import Find from '../components/Find'
-import Check from '../components/Check'
+import FindInput from '../components/FindInput'
+import CheckInput from '../components/CheckInput'
 import '../css/CalculatorContainer.css'
+import Found from '../components/Found'
+
 
 class CalculatorContainer extends Component {
 
@@ -21,24 +23,26 @@ class CalculatorContainer extends Component {
          grade: 355,
          safety: 1,
          XorY: 'x',
+         fixSim: "f",
+         evenPoint: "p",
          stressMod: {
-          "fixed": {
-            "even": 3,
-            "point": 2
+          "f": {
+            "e": 12,
+            "p": 8
           },
-          "simple": {
-           "even": 2,
-           "point": 1
+          "s": {
+           "e": 8,
+           "p": 4
          },
         },
          delfMod: {
-           "fixed": {
-             "even": 8,
-             "point": 4
+           "f": {
+             "e": 384,
+             "p": 192
            },
-           "simple": {
-            "even": 1.6,
-            "point": 1
+           "s": {
+            "e": 78.6,
+            "p": 48
             }
           },
          found: false,
@@ -63,7 +67,7 @@ class CalculatorContainer extends Component {
     }
 
     inputChange = (e) => {
-      if (e.target.name==='XorY'){
+      if (e.target.name==='XorY' || e.target.name==='fixSim' || e.target.name==='evenPoint'){
         this.setState({[e.target.name]: e.target.value})
       } else if (e.target.name==='safety' || e.target.name==='modifier') {
         this.setState({[e.target.name]: parseFloat(e.target.value)})
@@ -111,10 +115,14 @@ class CalculatorContainer extends Component {
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.load*this.state.safety
+        const delfMod = this.state.delfMod[this.state.fixSim][this.state.evenPoint]
+        const stressMod = this.state.stressMod[this.state.fixSim][this.state.evenPoint]
+        console.log('delfMod :>> ', delfMod);
+        console.log('stressMod :>> ', stressMod);
         console.log('force: ', F)
         const G = this.state.grade
-        const minI = Math.ceil(((d*F*L**2)/9840000)/10000)
-        const minZ = Math.ceil(((5*F*L)/(17*G))/1000)
+        const minI = Math.ceil(((d*F*L**2)/(205000*delfMod))/10000)
+        const minZ = Math.ceil(((20*F*L)/(17*G*stressMod))/1000)
         console.log('minI :>> ', minI);
         console.log('minZ :>> ', minZ);
         this.fetchBeams(minI, minZ)
@@ -188,12 +196,31 @@ class CalculatorContainer extends Component {
         }
         {this.state.type!==""?
             this.state.find?
-                <Find inputChange={this.inputChange} findBeam={this.findBeam} XorY={this.state.XorY} beam={this.state.beam} calcObject={this.state.calcObject}/>
+                <FindInput inputChange={this.inputChange}
+                findBeam={this.findBeam}
+                XorY={this.state.XorY}
+                fixSim={this.state.fixSim}
+                evenPoint={this.state.evenPoint}
+                beam={this.state.beam}
+                calcObject={this.state.calcObject}/>
                 :
-                <Check inputChange={this.inputChange} checkBeam={this.checkBeam} XorY={this.state.XorY} beams={this.state.beams} beamSelectChange={this.beamSelectChange} beam={this.state.beam} calcObject={this.state.calcObject}/>
+                <CheckInput inputChange={this.inputChange}
+                checkBeam={this.checkBeam}
+                XorY={this.state.XorY}
+                fixSim={this.state.fixSim}
+                evenPoint={this.state.evenPoint}
+                beams={this.state.beams}
+                beamSelectChange={this.beamSelectChange}
+                beam={this.state.beam}
+                calcObject={this.state.calcObject}/>
             :
             <div></div>  
         }
+        {this.state.beam?
+        <Found beam={this.state.beam} calcObject={this.state.calcObject}/>
+        :
+        <div></div>
+      }
       </div>
     )
   }
