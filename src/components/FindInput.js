@@ -3,7 +3,7 @@ import React from 'react'
 const FindInput= ({inputChange, findBeam, XorY, fixSim, evenPoint}) => {
   return (
     <>
-      <h3>Find Beam</h3>
+      <h3 className="find-header">Find Beam</h3>
       <form className='inputs' onSubmit={findBeam}>
         <div className='input-wrapper'>
           <label htmlFor="span">Span (mm):</label>

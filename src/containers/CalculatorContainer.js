@@ -111,7 +111,7 @@ class CalculatorContainer extends Component {
    findBeam = (e) => {
         e.preventDefault()
         console.log('findBeam')
-        this.setState({showSelect: false})
+        // this.setState({showSelect: false})
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.load*this.state.safety
@@ -131,7 +131,7 @@ class CalculatorContainer extends Component {
     checkBeam = (e) => {
       e.preventDefault()
       console.log('Check Beam')
-      this.setState({showSelect: false})
+      // this.setState({showSelect: false})
       this.setState({beam: this.state.selectedBeam},
         () => {
           this.getCalcs()

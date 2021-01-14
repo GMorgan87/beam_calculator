@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+.find-header{
+  margin: 1em;
+}
+
 input {
   width: 100%;
   padding: 1px 0;
