@@ -36,6 +36,7 @@ option {
 
 .inputs label input {
   display: flex;
+  border-radius: 0;
 }
 
 .input-wrapper {
