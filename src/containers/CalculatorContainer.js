@@ -11,7 +11,7 @@ class CalculatorContainer extends Component {
       super(props)
     
       this.state = {
-          showSelect: false,
+        showSelect: false,
          find: '',
          check: false,
          type: '',
@@ -21,12 +21,33 @@ class CalculatorContainer extends Component {
          grade: 355,
          safety: 1,
          XorY: 'x',
+         stressMod: {
+          "fixed": {
+            "even": 3,
+            "point": 2
+          },
+          "simple": {
+           "even": 2,
+           "point": 1
+         },
+        },
+         delfMod: {
+           "fixed": {
+             "even": 8,
+             "point": 4
+           },
+           "simple": {
+            "even": 1.6,
+            "point": 1
+            }
+          },
          found: false,
          beams: [],
          selectedBeam: {},
          calcObject: {}
       }
     }
+    
 
     checkSelect = () => this.setState({find:false, showSelect: true})
     findSelect = () => this.setState({find:true, showSelect: true})
