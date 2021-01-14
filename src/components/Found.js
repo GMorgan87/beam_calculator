@@ -16,10 +16,23 @@ const Found = ({beam, calcObject, deflMod, stressMod}) => {
               <td className="t-left">Width:</td>
               <td className="t-right">{beam.y}mm</td>
             </tr>
-            <tr>
-              <td className="t-left">Wall Thk:</td>
-              <td className="t-right">{beam.thk}mm</td>
-            </tr>
+            {!['U','P'].includes(beam.desc[0])?
+              <tr>
+                <td className="t-left">Wall Thk:</td>
+                <td className="t-right">{beam.thk}mm</td>
+              </tr>
+              :
+              <>
+                <tr>
+                  <td className="t-left">Web Thk:</td>
+                  <td className="t-right">{beam.thkWeb}mm</td>
+                </tr>
+                <tr>
+                  <td className="t-left">Flange Thk:</td>
+                  <td className="t-right">{beam.thkFlange}mm</td>
+                </tr>
+              </>
+            }
             <tr>
               <td className="t-left">kg/m:</td>
               <td className="t-right">{beam.mass}kg</td>

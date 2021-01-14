@@ -24,3 +24,5 @@
 .type-select li:hover{
     background-color: var(--hover);
 }
+
+.svg {pointer-events: none}
