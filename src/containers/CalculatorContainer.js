@@ -14,7 +14,7 @@ class CalculatorContainer extends Component {
     
       this.state = {
         showSelect: false,
-         find: '',
+         find: null,
          check: false,
          type: '',
          span: 0,
@@ -55,6 +55,8 @@ class CalculatorContainer extends Component {
 
     checkSelect = () => this.setState({find:false, showSelect: true})
     findSelect = () => this.setState({find:true, showSelect: true})
+
+    getHeader = () => this.state.find? "FIND BEAM":"CHECK BEAM"
 
     typeSelect = (e) => {
       this.setState({type:e.target.id})
@@ -175,13 +177,16 @@ class CalculatorContainer extends Component {
   render() {
     return (
       <div className='calc-con'>
-        {this.state.find===''?
+        {this.state.find===null?
             <FindOrCheck checkSelect={this.checkSelect} findSelect={this.findSelect}/>
             :
             <div></div>
         }
         {this.state.showSelect?
+                <>
+                <h2>{this.getHeader()}</h2>
                 <TypeSelect typeSelect={this.typeSelect} selected={this.state.type}/>
+                </>
             :
             <div></div>
         }

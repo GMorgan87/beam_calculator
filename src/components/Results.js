@@ -5,7 +5,7 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
   return (
     <div className="results">
       <div className="beam-display">
-        <h3 className="beam-header">{beam.desc}</h3>
+        <h3 className="beam-header">BEAM: {beam.desc}</h3>
         <table className="found-table">
           <tbody>
             <tr>

@@ -9,7 +9,7 @@
 }
 
 .selected {
-    background-color: var(--hover) !important;
+    background-color: var(--col4) !important;
 }
 
 .type-select li{

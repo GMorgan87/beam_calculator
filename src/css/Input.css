@@ -39,11 +39,12 @@ option {
 }
 
 .input-wrapper {
-  margin: 1vh 0;
+  margin: 2vh 0;
+  position: relative;
 }
 
-.radios-wrapper {
-  margin: 1vh 0;
+.input-wrapper label {
+  position: absolute
 }
 
 .defl-wrapper {
@@ -56,6 +57,8 @@ option {
   display: inline
 }
 
+
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -67,21 +70,19 @@ input[type=number] {
   }
 
 .radios-wrapper {
-  display: flex;
+  margin: 1vh 0;
   justify-content: space-between;
 }
 
 .radios {
-  display: flex;
+  margin-top: -1em;
   text-align: center;
-  width: 80%;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: right;
 }
 
 .radio {
-  display: flex;
-  width: 48%;
-  text-align: left;
+  text-align: right;
 }
 
 .radio input {
@@ -104,4 +105,8 @@ input[type=number] {
   border: 1px solid var(--button);
   text-align: center;
   padding: 0.8em 0;
+}
+
+.calc-button:hover{
+  background-color: var(--hover);
 }
