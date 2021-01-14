@@ -37,8 +37,12 @@ const Found = ({beam, calcObject}) => {
         <table className="calc-table">
           <tbody>
             <tr>
+              <td className="c-right">Load =</td>
+              <td><strong>{calcObject.load}N</strong></td>
+            </tr>
+            <tr>
               <td className="c-right">Force (F) =</td>
-              <td colSpan="2">W x 9.81 x Safety Factor =</td>
+              <td colSpan="2">Load x Safety Factor =</td>
               <td><strong>{calcObject.force}N</strong></td>
             </tr>
             <tr>

@@ -16,7 +16,7 @@ class CalculatorContainer extends Component {
          check: false,
          type: '',
          span: 0,
-         mass: 0,
+         load: 0,
          defl: 250,
          grade: 355,
          safety: 1,
@@ -44,7 +44,7 @@ class CalculatorContainer extends Component {
     inputChange = (e) => {
       if (e.target.name==='XorY'){
         this.setState({[e.target.name]: e.target.value})
-      } else if (e.target.name==='safety') {
+      } else if (e.target.name==='safety' || e.target.name==='modifier') {
         this.setState({[e.target.name]: parseFloat(e.target.value)})
       } else {
         this.setState({[e.target.name]: parseInt(e.target.value)})
@@ -82,13 +82,15 @@ class CalculatorContainer extends Component {
       })
   }
 
+
    findBeam = (e) => {
         e.preventDefault()
         console.log('findBeam')
         this.setState({showSelect: false})
         const d = this.state.defl
         const L = this.state.span
-        const F = this.state.mass*9.81*this.state.safety
+        const F = this.state.load*this.state.safety
+        console.log('force: ', F)
         const G = this.state.grade
         const minI = Math.ceil(((d*F*L**2)/9840000)/10000)
         const minZ = Math.ceil(((5*F*L)/(17*G))/1000)
@@ -110,16 +112,18 @@ class CalculatorContainer extends Component {
     getBeamWeight = () => this.state.beam.mass * this.state.span
 
     getCalcs = () => {
-      console.log('getCalcs')
-      const force = this.state.mass * 9.81 * this.state.safety
+      // const beamWeight = (this.state.span/1000)*this.state.beam.mass
+      const force = Math.ceil(this.state.load * this.state.safety)
       // const force = this.state.mass * 9.81 * this.state.safety
       let results = {
         span: this.state.span,
         mass: this.state.mass,
         force: force,
+        load: this.state.load,
         safety: this.state.safety,
         defl: this.state.defl,
         grade: this.state.grade,
+        // beamWeight: beamWeight,
         stress: ((force*this.state.span)/(4*this.state.beam.z*1000)).toFixed(2),
         deflection: ((force*this.state.span**3)/(48*205000*this.state.beam.i*10000)).toFixed(2)
       }

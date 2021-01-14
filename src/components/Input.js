@@ -5,13 +5,17 @@ const Input = ({inputChange, findBeam, XorY}) => {
 
   return (
     <form className='inputs' onSubmit={findBeam}>
+      {/* <div className='input-wrapper'>
+          <label htmlFor="modifier">MODIFIER:</label>
+          <input onChange={inputChange} type='number' name='modifier' step="0.01" required/>
+        </div> */}
         <div className='input-wrapper'>
           <label htmlFor="span">Span (mm):</label>
           <input onChange={inputChange} type='number' name='span' required/>
         </div>
         <div className='input-wrapper'>
-          <label htmlFor="mass">Weight (kg):</label>
-          <input onChange={inputChange} type='number' name='mass' required/>
+          <label htmlFor="mass">Force (N):</label>
+          <input onChange={inputChange} type='number' name='load' required/>
         </div>
         <div className='input-wrapper'>
           <label htmlFor="grade">Steel Grade:</label>
@@ -30,8 +34,8 @@ const Input = ({inputChange, findBeam, XorY}) => {
         <div className='radios-wrapper'>
           <label htmlFor="XorY">Load Axis:</label>
           <div className="radios">
-            <div className="radio"><input onClick={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/>X</div>
-            <div className="radio"><input onClick={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/>Y</div>
+            <div className="radio"><input onChange={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/>X</div>
+            <div className="radio"><input onChange={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/>Y</div>
           </div>
         </div>
         <input type='submit' value="CALCULATE" className="calc-button"/>
