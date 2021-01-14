@@ -23,7 +23,7 @@ class CalculatorContainer extends Component {
          grade: 355,
          safety: 1,
          XorY: 'x',
-         fixSim: "f",
+         fixSim: "s",
          evenPoint: "p",
          stressMod: {
           "f": {
