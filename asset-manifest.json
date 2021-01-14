@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/beam_calculator/static/css/main.8fee5be5.chunk.css",
-    "main.js": "/beam_calculator/static/js/main.7b4ce2f1.chunk.js",
-    "main.js.map": "/beam_calculator/static/js/main.7b4ce2f1.chunk.js.map",
+    "main.css": "/beam_calculator/static/css/main.b29b61bb.chunk.css",
+    "main.js": "/beam_calculator/static/js/main.a6d882cc.chunk.js",
+    "main.js.map": "/beam_calculator/static/js/main.a6d882cc.chunk.js.map",
     "runtime-main.js": "/beam_calculator/static/js/runtime-main.7bdf3144.js",
     "runtime-main.js.map": "/beam_calculator/static/js/runtime-main.7bdf3144.js.map",
     "static/css/2.3ca2e7a5.chunk.css": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.97c74b80.chunk.js": "/beam_calculator/static/js/2.97c74b80.chunk.js",
-    "static/js/2.97c74b80.chunk.js.map": "/beam_calculator/static/js/2.97c74b80.chunk.js.map",
+    "static/js/2.05917d12.chunk.js": "/beam_calculator/static/js/2.05917d12.chunk.js",
+    "static/js/2.05917d12.chunk.js.map": "/beam_calculator/static/js/2.05917d12.chunk.js.map",
     "static/js/3.0d3cf835.chunk.js": "/beam_calculator/static/js/3.0d3cf835.chunk.js",
     "static/js/3.0d3cf835.chunk.js.map": "/beam_calculator/static/js/3.0d3cf835.chunk.js.map",
     "index.html": "/beam_calculator/index.html",
     "static/css/2.3ca2e7a5.chunk.css.map": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css.map",
-    "static/css/main.8fee5be5.chunk.css.map": "/beam_calculator/static/css/main.8fee5be5.chunk.css.map",
-    "static/js/2.97c74b80.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.97c74b80.chunk.js.LICENSE.txt",
+    "static/css/main.b29b61bb.chunk.css.map": "/beam_calculator/static/css/main.b29b61bb.chunk.css.map",
+    "static/js/2.05917d12.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.05917d12.chunk.js.LICENSE.txt",
     "static/media/CHS.481c967b.svg": "/beam_calculator/static/media/CHS.481c967b.svg",
     "static/media/PFC.a6a7760d.svg": "/beam_calculator/static/media/PFC.a6a7760d.svg",
     "static/media/RHS.8368783e.svg": "/beam_calculator/static/media/RHS.8368783e.svg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.7bdf3144.js",
     "static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.97c74b80.chunk.js",
-    "static/css/main.8fee5be5.chunk.css",
-    "static/js/main.7b4ce2f1.chunk.js"
+    "static/js/2.05917d12.chunk.js",
+    "static/css/main.b29b61bb.chunk.css",
+    "static/js/main.a6d882cc.chunk.js"
   ]
 }
