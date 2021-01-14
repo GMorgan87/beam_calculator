@@ -14,7 +14,7 @@ const Input = ({inputChange, findBeam, XorY}) => {
           <input onChange={inputChange} type='number' name='span' required/>
         </div>
         <div className='input-wrapper'>
-          <label htmlFor="mass">Force (N):</label>
+          <label htmlFor="mass">Load (N):</label>
           <input onChange={inputChange} type='number' name='load' required/>
         </div>
         <div className='input-wrapper'>

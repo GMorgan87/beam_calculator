@@ -24,8 +24,8 @@ const Input = ({ beams, inputChange, checkBeam, XorY, beamSelectChange}) => {
           <input onChange={inputChange} type='number' name='span' required/>
         </div>
         <div className='input-wrapper'>
-          <label htmlFor="mass">Weight (kg):</label>
-          <input onChange={inputChange} type='number' name='mass' required/>
+          <label htmlFor="mass">Load (N):</label>
+          <input onChange={inputChange} type='number' name='load' required/>
         </div>
         <div className='input-wrapper'>
           <label htmlFor="grade">Steel Grade:</label>
