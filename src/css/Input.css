@@ -74,12 +74,14 @@ input[type=number] {
 .radios {
   display: flex;
   text-align: center;
-  width: 80%
+  width: 80%;
+  justify-content: space-between;
 }
 
 .radio {
   display: flex;
-  width: 50%
+  width: 48%;
+  text-align: left;
 }
 
 .radio input {

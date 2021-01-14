@@ -58,7 +58,6 @@ class CalculatorContainer extends Component {
 
     typeSelect = (e) => {
       this.setState({type:e.target.id})
-      console.log(`https://resteel.herokuapp.com/${e.target.id}`)
       fetch(`https://resteel.herokuapp.com/${e.target.id}`)
       .then(res => res.json())
       .then(data => {
@@ -84,7 +83,6 @@ class CalculatorContainer extends Component {
     }
 
   fetchBeams = (minI, minZ) => {
-    console.log('fetchBeam')
     fetch(`https://resteel.herokuapp.com/${this.state.type}/${this.state.XorY}/${minI}/${minZ}`)
       .then(res => {
         if (res.ok) {
@@ -94,8 +92,6 @@ class CalculatorContainer extends Component {
         }
       })
       .then(data => {
-        console.log('fetched')
-        console.log('api data: ', data)
           data.i = this.getBeamI(data)
           data.z = this.getBeamZ(data)
           this.setState({beam:data,
@@ -110,27 +106,20 @@ class CalculatorContainer extends Component {
 
    findBeam = (e) => {
         e.preventDefault()
-        console.log('findBeam')
         // this.setState({showSelect: false})
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.load*this.state.safety
         const deflMod = this.state.deflMod[this.state.fixSim][this.state.evenPoint]
         const stressMod = this.state.stressMod[this.state.fixSim][this.state.evenPoint]
-        console.log('deflMod :>> ', deflMod);
-        console.log('stressMod :>> ', stressMod);
-        console.log('force: ', F)
         const G = this.state.grade
         const minI = Math.ceil(((d*F*L**2)/(205000*deflMod))/10000)
         const minZ = Math.ceil(((20*F*L)/(17*G*stressMod))/1000)
-        console.log('minI :>> ', minI);
-        console.log('minZ :>> ', minZ);
         this.fetchBeams(minI, minZ)
     }
 
     checkBeam = (e) => {
       e.preventDefault()
-      console.log('Check Beam')
       // this.setState({showSelect: false})
       this.setState({beam: this.state.selectedBeam},
         () => {
