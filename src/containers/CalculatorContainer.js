@@ -35,7 +35,7 @@ class CalculatorContainer extends Component {
            "p": 4
          },
         },
-         delfMod: {
+         deflMod: {
            "f": {
              "e": 384,
              "p": 192
@@ -115,13 +115,13 @@ class CalculatorContainer extends Component {
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.load*this.state.safety
-        const delfMod = this.state.delfMod[this.state.fixSim][this.state.evenPoint]
+        const deflMod = this.state.deflMod[this.state.fixSim][this.state.evenPoint]
         const stressMod = this.state.stressMod[this.state.fixSim][this.state.evenPoint]
-        console.log('delfMod :>> ', delfMod);
+        console.log('deflMod :>> ', deflMod);
         console.log('stressMod :>> ', stressMod);
         console.log('force: ', F)
         const G = this.state.grade
-        const minI = Math.ceil(((d*F*L**2)/(205000*delfMod))/10000)
+        const minI = Math.ceil(((d*F*L**2)/(205000*deflMod))/10000)
         const minZ = Math.ceil(((20*F*L)/(17*G*stressMod))/1000)
         console.log('minI :>> ', minI);
         console.log('minZ :>> ', minZ);
@@ -143,6 +143,8 @@ class CalculatorContainer extends Component {
     getCalcs = () => {
       // const beamWeight = (this.state.span/1000)*this.state.beam.mass
       const force = Math.ceil(this.state.load * this.state.safety)
+      const stressMod = this.state.stressMod[this.state.fixSim][this.state.evenPoint]
+      const deflMod = this.state.deflMod[this.state.fixSim][this.state.evenPoint]
       // const force = this.state.mass * 9.81 * this.state.safety
       let results = {
         span: this.state.span,
@@ -153,8 +155,8 @@ class CalculatorContainer extends Component {
         defl: this.state.defl,
         grade: this.state.grade,
         // beamWeight: beamWeight,
-        stress: ((force*this.state.span)/(4*this.state.beam.z*1000)).toFixed(2),
-        deflection: ((force*this.state.span**3)/(48*205000*this.state.beam.i*10000)).toFixed(2)
+        stress: ((force*this.state.span)/(stressMod*this.state.beam.z*1000)).toFixed(2),
+        deflection: ((force*this.state.span**3)/(deflMod*205000*this.state.beam.i*10000)).toFixed(2)
       }
         this.setState({calcObject:results})
     }
@@ -217,10 +219,13 @@ class CalculatorContainer extends Component {
             <div></div>  
         }
         {this.state.beam?
-        <Found beam={this.state.beam} calcObject={this.state.calcObject}/>
-        :
-        <div></div>
-      }
+          <Found beam={this.state.beam}
+          calcObject={this.state.calcObject}
+          stressMod={this.state.stressMod[this.state.fixSim][this.state.evenPoint]}
+          deflMod={this.state.deflMod[this.state.fixSim][this.state.evenPoint]}/>
+          :
+          <div></div>
+        }
       </div>
     )
   }

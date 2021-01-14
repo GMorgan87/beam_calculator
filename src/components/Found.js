@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Found.css'
 
-const Found = ({beam, calcObject}) => {
+const Found = ({beam, calcObject, deflMod, stressMod}) => {
   return (
     <div className="results">
       <div className="beam-display">
@@ -68,7 +68,7 @@ const Found = ({beam, calcObject}) => {
             </tr>
             <tr>
               <td></td>
-              <td className="calc-bottom">48xExI</td>
+              <td className="calc-bottom">{deflMod}xExI</td>
             </tr>
             <tr>
               <td className="c-right">Allowable Deflection =</td>
@@ -82,7 +82,7 @@ const Found = ({beam, calcObject}) => {
             </tr>
             <tr>
               <td></td>
-              <td className="calc-bottom">4xZ</td>
+              <td className="calc-bottom">{stressMod}xZ</td>
             </tr>
             <tr>
               <td className="c-right">Allowable Stress =</td>
