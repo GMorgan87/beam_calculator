@@ -101,6 +101,7 @@ class CalculatorContainer extends Component {
           this.getCalcs();
       })
       .catch(err => {
+        this.setState({error: 'No Suitable Beam Found'})
         console.log('err: ', err)
       })
   }
@@ -109,6 +110,8 @@ class CalculatorContainer extends Component {
    findBeam = (e) => {
         e.preventDefault()
         // this.setState({showSelect: false})
+        this.setState({beam:'',
+          found:false})
         const d = this.state.defl
         const L = this.state.span
         const F = this.state.load*this.state.safety
@@ -220,6 +223,11 @@ class CalculatorContainer extends Component {
           :
           <div></div>
         }
+        {this.state.error?
+        <div><h2>{this.state.error}</h2></div>
+        :
+        <></>
+          }
       </div>
     )
   }

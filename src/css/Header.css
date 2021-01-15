@@ -1,10 +1,11 @@
 .header {
-    height: 6vh;
+    height: 8vh;
     line-height: 8vh;
+    background-color: var(--button);
 }
 
 .header h1 {
-    font-size: 1.5em;
+    font-size: min(8vw, 55px);
     margin: 0;
     padding: 0;
     font-weight: bolder;
@@ -12,6 +13,6 @@
 
 .header a {
     text-decoration: none;
-    color: var(--button);
+    color: white;
     
 }

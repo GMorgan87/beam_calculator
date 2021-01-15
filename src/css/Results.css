@@ -20,7 +20,11 @@
 }
 
 .beam-header {
-    margin: 1vh;
+    margin: 0;
+}
+
+.calc {
+    display: block
 }
 
 .found-table {

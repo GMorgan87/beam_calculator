@@ -1,6 +1,5 @@
 import React from 'react'
 import '../css/TypeSelect.css'
-import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import shs from '../icons/SHS.svg'
 import rhs from '../icons/RHS.svg'

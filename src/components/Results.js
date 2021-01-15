@@ -47,36 +47,69 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
 
       <div className="calcs-display">
         <h3 className="beam-header">CALCULATIONS</h3>
+        <div>
+          <span>Load =</span>
+          <span>{calcObject.load}N</span>
+        </div>
+        <div>
+          <span>Force (F) =</span>
+          <span>Load x Safety Factor = {calcObject.force}N</span>
+        </div>
+        <div>
+          <span>Span (L) =</span>
+          <span>{calcObject.span}mm</span>
+        </div>
+        <div>
+          <span>Youngs Modulus (E) =</span>
+          <span>205000MPa</span>
+        </div>
+        <div>
+          <span>I =</span>
+          <span>{beam.i*10000}mm<sup>4</sup></span>
+        </div>
+        <div>
+          <span>Z =</span>
+          <span>{beam.z*1000}mm<sup>3</sup></span>
+        </div>
+        <div>
+          <span>Max Deflection =</span>
+          <div className='calc'>
+            <span className="calc-top">WxL<sup>3</sup></span>
+            <span>{deflMod}xExI</span>
+          </div>
+          <span>=</span>
+          <span><strong>{calcObject.deflection}mm</strong></span>
+        </div>
         <table className="calc-table">
           <tbody>
-            <tr>
+            {/* <tr>
               <td className="c-right">Load =</td>
               <td><strong>{calcObject.load}N</strong></td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Force (F) =</td>
               <td colSpan="2">Load x Safety Factor =</td>
               <td><strong>{calcObject.force}N</strong></td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Span (L) =</td>
               <td>{calcObject.span}mm</td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Youngs Modulus (E) =</td>
               <td>205000MPa</td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">I =</td>
               <td>{beam.i*10000}mm<sup>4</sup></td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Z =</td>
               <td>{beam.z*1000}mm<sup>3</sup></td>
-            </tr>
+            </tr> */}
             <tr>
-              <td className="c-right">Max Deflection =</td>
-              <td className="calc-top">WxL<sup>3</sup></td>
+              {/* <td className="c-right">Max Deflection =</td> */}
+              {/* <td className="calc-top">WxL<sup>3</sup></td> */}
               <td>= <strong>{calcObject.deflection}mm</strong></td>
             </tr>
             <tr>
