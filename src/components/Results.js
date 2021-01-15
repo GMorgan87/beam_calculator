@@ -77,11 +77,10 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Max Deflection:</p>
-          {/* <div className='calc'>
-            <p className="calc-top">WxL<sup>3</sup></p>
-            <p >{deflMod}xExI</p>
-          </div> */}
-          <p className="value"><strong>{calcObject.deflection}mm</strong></p>
+          <div className='calc'>
+            <p>(WxL<sup>3</sup>)/({deflMod}xExI)</p>
+            <p className="value"><strong>{calcObject.deflection}mm</strong></p>
+          </div>
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Allowable Deflection:</p>
@@ -90,11 +89,10 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Max Stress:</p>
-          {/* <div>
-            <p className="calc-top">WL</p>
-            <p className="calc-bottom">{stressMod}xZ</p>
-          </div> */}
-          <p className="value"><strong>{calcObject.stress}MPa</strong></p>
+          <div className="calc">
+            <p>(WL)/({stressMod}xZ)</p>
+            <p className="value"><strong>{calcObject.stress}MPa</strong></p>
+          </div>
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Allowable Stress:</p>

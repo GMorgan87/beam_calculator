@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 90%;
-    max-width: 500px;
+    max-width: 300px;
     margin: 1vh auto;
 }
 
@@ -62,6 +62,7 @@
 
 .calc-wrapper {
     display:flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     text-align: left;
     margin: 2vh 0;
@@ -69,4 +70,11 @@
 
 .calc-wrapper p {
     margin: 0
+}
+
+.calc {
+    width: 90%;
+    margin-left:10%;
+    display: flex;
+    justify-content: space-between;
 }
