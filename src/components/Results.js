@@ -80,6 +80,26 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
           <span>=</span>
           <span><strong>{calcObject.deflection}mm</strong></span>
         </div>
+        <div>
+          <span>Allowable Deflection = </span>
+          <span>L/{calcObject.defl} = </span>
+          <span>{(calcObject.span/calcObject.defl).toFixed(2)}mm</span>
+        </div>
+        <div>
+            <span>Max Stress = </span>
+            <div>
+              <span className="calc-top">WL</span>
+              <span className="calc-bottom">{stressMod}xZ</span>
+            </div>
+            <span>= {calcObject.stress}MPa</span>
+        </div>
+        <div>
+          <span>Allowable Stress = </span>
+          <span>{calcObject.grade} x 0.85 = </span>
+          <span>{(calcObject.grade*0.85).toFixed(2)}MPa</span>
+        </div>
+
+
         <table className="calc-table">
           <tbody>
             {/* <tr>
@@ -107,29 +127,29 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
               <td className="c-right">Z =</td>
               <td>{beam.z*1000}mm<sup>3</sup></td>
             </tr> */}
-            <tr>
-              {/* <td className="c-right">Max Deflection =</td> */}
-              {/* <td className="calc-top">WxL<sup>3</sup></td> */}
-              <td>= <strong>{calcObject.deflection}mm</strong></td>
-            </tr>
-            <tr>
+            {/* <tr>
+              <td className="c-right">Max Deflection =</td> 
+               <td className="calc-top">WxL<sup>3</sup></td> 
+               <td>= <strong>{calcObject.deflection}mm</strong></td>
+            </tr> */}
+            {/* <tr>
               <td></td>
               <td className="calc-bottom">{deflMod}xExI</td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Allowable Deflection =</td>
               <td>L / {calcObject.defl}</td>
               <td>= {(calcObject.span/calcObject.defl).toFixed(2)}mm</td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td className="c-right">Max Stress =</td>
               <td className="calc-top">WL</td>
               <td>= <strong>{calcObject.stress}MPa</strong></td>
-            </tr>
-            <tr>
+            </tr> */}
+            {/* <tr>
               <td></td>
               <td className="calc-bottom">{stressMod}xZ</td>
-            </tr>
+            </tr> */}
             <tr>
               <td className="c-right">Allowable Stress =</td>
               <td>{calcObject.grade} x 0.85</td>

@@ -97,6 +97,7 @@ class CalculatorContainer extends Component {
           data.i = this.getBeamI(data)
           data.z = this.getBeamZ(data)
           this.setState({beam:data,
+                          error: null,
                           found:true})
           this.getCalcs();
       })
