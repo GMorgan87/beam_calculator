@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/beam_calculator/static/css/main.3c01bee1.chunk.css",
-    "main.js": "/beam_calculator/static/js/main.2069e6ad.chunk.js",
-    "main.js.map": "/beam_calculator/static/js/main.2069e6ad.chunk.js.map",
+    "main.css": "/beam_calculator/static/css/main.99a1a937.chunk.css",
+    "main.js": "/beam_calculator/static/js/main.0917cf4f.chunk.js",
+    "main.js.map": "/beam_calculator/static/js/main.0917cf4f.chunk.js.map",
     "runtime-main.js": "/beam_calculator/static/js/runtime-main.420663f1.js",
     "runtime-main.js.map": "/beam_calculator/static/js/runtime-main.420663f1.js.map",
     "static/css/2.3ca2e7a5.chunk.css": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.48116c8f.chunk.js.map": "/beam_calculator/static/js/3.48116c8f.chunk.js.map",
     "index.html": "/beam_calculator/index.html",
     "static/css/2.3ca2e7a5.chunk.css.map": "/beam_calculator/static/css/2.3ca2e7a5.chunk.css.map",
-    "static/css/main.3c01bee1.chunk.css.map": "/beam_calculator/static/css/main.3c01bee1.chunk.css.map",
+    "static/css/main.99a1a937.chunk.css.map": "/beam_calculator/static/css/main.99a1a937.chunk.css.map",
     "static/js/2.5dca50e9.chunk.js.LICENSE.txt": "/beam_calculator/static/js/2.5dca50e9.chunk.js.LICENSE.txt",
     "static/media/CHS.481c967b.svg": "/beam_calculator/static/media/CHS.481c967b.svg",
     "static/media/PFC.a6a7760d.svg": "/beam_calculator/static/media/PFC.a6a7760d.svg",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.420663f1.js",
     "static/css/2.3ca2e7a5.chunk.css",
     "static/js/2.5dca50e9.chunk.js",
-    "static/css/main.3c01bee1.chunk.css",
-    "static/js/main.2069e6ad.chunk.js"
+    "static/css/main.99a1a937.chunk.css",
+    "static/js/main.0917cf4f.chunk.js"
   ]
 }
