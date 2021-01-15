@@ -68,8 +68,8 @@ const CheckInput = ({inputChange, beams, checkBeam, beamSelectChange, XorY, fixS
         <div className='radios-wrapper'>
           <label htmlFor="XorY">Load Axis:</label>
           <div className="radios">
-            <div className="radio">X<input onClick={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/></div>
-            <div className="radio">Y<input onClick={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/></div>
+            <div className="radio">X<input onChange={inputChange} type="radio" value="x" name="XorY" checked={XorY==="x"}/></div>
+            <div className="radio">Y<input onChange={inputChange} type="radio" value="y" name="XorY" checked={XorY==="y"}/></div>
           </div>
         </div>
         

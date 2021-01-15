@@ -78,3 +78,7 @@
     display: flex;
     justify-content: space-between;
 }
+
+.fail {
+    color: red !important;
+}

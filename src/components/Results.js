@@ -2,6 +2,13 @@ import React from 'react'
 import '../css/Results.css'
 
 const Results = ({beam, calcObject, deflMod, stressMod}) => {
+
+  const failClass = () => {
+    return calcObject.deflection >= calcObject.span/calcObject.defl ||
+    calcObject.stress >= calcObject.grade*0.85 ?
+    'fail' : ''
+  }
+
   return (
     <div className="results">
       <div className="beam-display">
@@ -79,7 +86,7 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
           <p className="calc-label">Max Deflection:</p>
           <div className='calc'>
             <p>(WxL<sup>3</sup>)/({deflMod}xExI)</p>
-            <p className="value"><strong>{calcObject.deflection}mm</strong></p>
+            <p className={`value ${failClass()}`}><strong>{calcObject.deflection}mm</strong></p>
           </div>
         </div>
         <div className="calc-wrapper">
@@ -91,7 +98,7 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
           <p className="calc-label">Max Stress:</p>
           <div className="calc">
             <p>(WL)/({stressMod}xZ)</p>
-            <p className="value"><strong>{calcObject.stress}MPa</strong></p>
+            <p className={`value ${failClass()}`}><strong>{calcObject.stress}MPa</strong></p>
           </div>
         </div>
         <div className="calc-wrapper">
