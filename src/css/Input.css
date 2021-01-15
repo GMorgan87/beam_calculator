@@ -7,7 +7,7 @@
 }
 
 .find-header{
-  margin: 1em;
+  margin: 1em
 }
 
 input {
@@ -47,6 +47,11 @@ option {
 .input-wrapper label {
   position: absolute
 }
+
+.beam-wrapper {
+  margin: 2vh 0;;
+}
+
 
 .defl-wrapper {
   display: flex;

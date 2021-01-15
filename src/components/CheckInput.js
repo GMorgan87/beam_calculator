@@ -12,8 +12,8 @@ const CheckInput = ({inputChange, beams, checkBeam, beamSelectChange, XorY, fixS
     <>
       <form className='inputs' onSubmit={checkBeam}>
         {getBeams.length>0?
-          <div className='input-wrapper'>
-            <label htmlFor="beam">Select Beam:</label>
+          <div className='beam-wrapper'>
+            <label className="beam-label" htmlFor="beam" >Select Beam:</label>
             <select name="beam" onChange={beamSelectChange}>
               {getBeams}
             </select>
