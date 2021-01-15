@@ -47,56 +47,59 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
 
       <div className="calcs-display">
         <h3 className="beam-header">CALCULATIONS</h3>
-        <div>
-          <span>Load =</span>
-          <span>{calcObject.load}N</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Load:</p>
+          <p className="value">{calcObject.load}N</p>
         </div>
-        <div>
-          <span>Force (F) =</span>
-          <span>Load x Safety Factor = {calcObject.force}N</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Safety Factor (SF):</p>
+          <p className="value">{calcObject.safety}</p>
         </div>
-        <div>
-          <span>Span (L) =</span>
-          <span>{calcObject.span}mm</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Force (F):</p>
+          <p className="value">{calcObject.force}N</p>
         </div>
-        <div>
-          <span>Youngs Modulus (E) =</span>
-          <span>205000MPa</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Span (L):</p>
+          <p className="value">{calcObject.span}mm</p>
         </div>
-        <div>
-          <span>I =</span>
-          <span>{beam.i*10000}mm<sup>4</sup></span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Youngs Modulus (E):</p>
+          <p className="value">205000MPa</p>
         </div>
-        <div>
-          <span>Z =</span>
-          <span>{beam.z*1000}mm<sup>3</sup></span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Beam I:</p>
+          <p className="value">{beam.i}cm<sup>4</sup></p>
         </div>
-        <div>
-          <span>Max Deflection =</span>
-          <div className='calc'>
-            <span className="calc-top">WxL<sup>3</sup></span>
-            <span>{deflMod}xExI</span>
-          </div>
-          <span>=</span>
-          <span><strong>{calcObject.deflection}mm</strong></span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Baem Z:</p>
+          <p className="value">{beam.z}cm<sup>3</sup></p>
         </div>
-        <div>
-          <span>Allowable Deflection = </span>
-          <span>L/{calcObject.defl} = </span>
-          <span>{(calcObject.span/calcObject.defl).toFixed(2)}mm</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Max Deflection:</p>
+          {/* <div className='calc'>
+            <p className="calc-top">WxL<sup>3</sup></p>
+            <p >{deflMod}xExI</p>
+          </div> */}
+          <p className="value"><strong>{calcObject.deflection}mm</strong></p>
         </div>
-        <div>
-            <span>Max Stress = </span>
-            <div>
-              <span className="calc-top">WL</span>
-              <span className="calc-bottom">{stressMod}xZ</span>
-            </div>
-            <span>= {calcObject.stress}MPa</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Allowable Deflection:</p>
+          {/* <p>L/{calcObject.defl} = </p> */}
+          <p className="value">{(calcObject.span/calcObject.defl).toFixed(2)}mm</p>
         </div>
-        <div>
-          <span>Allowable Stress = </span>
-          <span>{calcObject.grade} x 0.85 = </span>
-          <span>{(calcObject.grade*0.85).toFixed(2)}MPa</span>
+        <div className="calc-wrapper">
+          <p className="calc-label">Max Stress:</p>
+          {/* <div>
+            <p className="calc-top">WL</p>
+            <p className="calc-bottom">{stressMod}xZ</p>
+          </div> */}
+          <p className="value"><strong>{calcObject.stress}MPa</strong></p>
+        </div>
+        <div className="calc-wrapper">
+          <p className="calc-label">Allowable Stress:</p>
+          {/* <p>{calcObject.grade} x 0.85 = </p> */}
+          <p className="value">{(calcObject.grade*0.85).toFixed(2)}MPa</p>
         </div>
       </div>
 

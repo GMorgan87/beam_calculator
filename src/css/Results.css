@@ -8,13 +8,13 @@
 }
 
 .beam-display {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     min-width: 230px;
 }
 
 .calcs-display {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     min-width: 250px;
 }
@@ -32,11 +32,11 @@
 }
 
 .t-left {
-    text-align: right;
+    text-align: left;
     width: 50%;
 }
 .t-right {
-    text-align: left;
+    text-align: right;
     width: 50%;
 }
 
@@ -58,4 +58,15 @@
 
 .calc-bottom {
     text-align: center;
+}
+
+.calc-wrapper {
+    display:flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 2vh 0;
+}
+
+.calc-wrapper p {
+    margin: 0
 }
