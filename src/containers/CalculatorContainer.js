@@ -175,7 +175,10 @@ class CalculatorContainer extends Component {
     componentDidMount(){
         fetch('https://resteel.herokuapp.com/')
             .then(res => res.json)
-            .then(data => console.log('ping'))
+            .then(data => {
+              this.setState({start: true})
+              console.log('ping')
+            })
     }
 
   render() {
@@ -184,7 +187,7 @@ class CalculatorContainer extends Component {
         {this.state.find===null?
             <FindOrCheck checkSelect={this.checkSelect} findSelect={this.findSelect}/>
             :
-            <div></div>
+            <></>
         }
         {this.state.showSelect?
                 <>
@@ -192,7 +195,7 @@ class CalculatorContainer extends Component {
                 <TypeSelect typeSelect={this.typeSelect} selected={this.state.type}/>
                 </>
             :
-            <div></div>
+            <></>
         }
         {this.state.type!==""?
             this.state.find?
