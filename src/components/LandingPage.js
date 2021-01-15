@@ -11,7 +11,7 @@ useEffect(() => {
     fetch('https://resteel.herokuapp.com/')
             .then(res => res.json)
             .then(data => {
-                // setLoaded(true)
+                setLoaded(true)
                 console.log('ping')
             })
     });
@@ -19,10 +19,9 @@ useEffect(() => {
     const btnText = loaded? "LAUNCH CALCULATOR" : "LOADING..."
 
   return (
-    <>
-        <button onClick={()=>setLoaded(!loaded)}>TEST</button>
+    <div className="landing">
         <button className="start-button" onClick={handleStart} disabled={!loaded}>{btnText}</button>
-    </>
+    </div>
   )
 }
 
