@@ -1,0 +1,16 @@
+.start-button {
+    width: 100%;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 1vh auto;
+    border: 1px solid var(--button);
+    text-align: center;
+    padding: 0.8em 0;
+}
+
+.start-button:hover {
+    background-color: var(--hover);
+}

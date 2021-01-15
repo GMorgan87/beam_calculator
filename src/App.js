@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
+import LandingPage from './components/LandingPage'
 import CalculatorContainer from './containers/CalculatorContainer';
 
 function App() {
 
   const [start, setStart] = useState(false);
 
-  useEffect(() => {
-    fetch('https://resteel.herokuapp.com/')
-            .then(res => res.json)
-            .then(data => {
-              setStart(true)
-              console.log('ping')
-            })
-  });
+  const handleStart = () => {
+    setStart(true)
+  }
 
 
   return (
@@ -23,7 +19,7 @@ function App() {
       {start?
       <CalculatorContainer/>
       :
-      <></>
+      <LandingPage handleStart={handleStart}/>
       }
       
     </div>
