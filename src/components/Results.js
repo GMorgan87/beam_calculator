@@ -77,35 +77,41 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Beam I:</p>
-          <p className="value">{beam.i}cm<sup>4</sup></p>
+          <p className="value">{beam.i*10000}mm<sup>4</sup></p>
         </div>
         <div className="calc-wrapper">
           <p className="calc-label">Baem Z:</p>
-          <p className="value">{beam.z}cm<sup>3</sup></p>
+          <p className="value">{beam.z*1000}mm<sup>3</sup></p>
         </div>
-        <div className="calc-wrapper">
-          <p className="calc-label">Max Deflection:</p>
-          <div className='calc'>
-            <p>(WxL<sup>3</sup>)/({deflMod}xExI)</p>
-            <p className={`value ${failClass()}`}><strong>{calcObject.deflection}mm</strong></p>
+        
+        <div className="main">
+          <div className="calc-wrapper">
+            <p className="calc-label">Max. Deflection:</p>
+            <div className='calc'>
+              <p>(WxL<sup>3</sup>)/({deflMod}xExI)</p>
+              <p className={`value ${failClass()}`}><strong>{calcObject.deflection}mm</strong></p>
+            </div>
+          </div>
+          <div className="calc-wrapper">
+            <p className="calc-label">Allowable Deflection:</p>
+            {/* <p>L/{calcObject.defl} = </p> */}
+            <p className="value">{(calcObject.span/calcObject.defl).toFixed(2)}mm</p>
           </div>
         </div>
-        <div className="calc-wrapper">
-          <p className="calc-label">Allowable Deflection:</p>
-          {/* <p>L/{calcObject.defl} = </p> */}
-          <p className="value">{(calcObject.span/calcObject.defl).toFixed(2)}mm</p>
-        </div>
-        <div className="calc-wrapper">
-          <p className="calc-label">Max Stress:</p>
-          <div className="calc">
-            <p>(WL)/({stressMod}xZ)</p>
-            <p className={`value ${failClass()}`}><strong>{calcObject.stress}MPa</strong></p>
+
+        <div className="main">
+          <div className="calc-wrapper">
+            <p className="calc-label">Max. Stress:</p>
+            <div className="calc">
+              <p>(WL)/({stressMod}xZ)</p>
+              <p className={`value ${failClass()}`}><strong>{calcObject.stress}MPa</strong></p>
+            </div>
           </div>
-        </div>
-        <div className="calc-wrapper">
-          <p className="calc-label">Allowable Stress:</p>
-          {/* <p>{calcObject.grade} x 0.85 = </p> */}
-          <p className="value">{(calcObject.grade*0.85).toFixed(2)}MPa</p>
+          <div className="calc-wrapper">
+            <p className="calc-label">Allowable Stress:</p>
+            {/* <p>{calcObject.grade} x 0.85 = </p> */}
+            <p className="value">{(calcObject.grade*0.85).toFixed(2)}MPa</p>
+          </div>
         </div>
       </div>
 

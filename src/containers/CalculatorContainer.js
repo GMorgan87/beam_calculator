@@ -228,7 +228,7 @@ class CalculatorContainer extends Component {
           <div></div>
         }
         {this.state.error?
-        <div><h2>{this.state.error}</h2></div>
+        <div><h2 className="error">{this.state.error}</h2></div>
         :
         <></>
           }
