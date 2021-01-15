@@ -172,15 +172,6 @@ class CalculatorContainer extends Component {
       }
     }
     
-    componentDidMount(){
-        fetch('https://resteel.herokuapp.com/')
-            .then(res => res.json)
-            .then(data => {
-              this.setState({start: true})
-              console.log('ping')
-            })
-    }
-
   render() {
     return (
       <div className='calc-con'>

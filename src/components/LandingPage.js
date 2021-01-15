@@ -16,7 +16,7 @@ useEffect(() => {
             })
     });
 
-    const btnText = loaded? "LAUNCH CALCULATOR" : "LOADING..."
+    const btnText = loaded? "START CALCULATOR" : "LOADING..."
 
   return (
     <div className="landing">
