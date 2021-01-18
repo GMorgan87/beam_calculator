@@ -83,12 +83,12 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
           <p className="calc-label">Baem Z:</p>
           <p className="value">{beam.z*1000}mm<sup>3</sup></p>
         </div>
-        
+
         <div className="main">
           <div className="calc-wrapper">
             <p className="calc-label">Max. Deflection:</p>
             <div className='calc'>
-              <p>(WxL<sup>3</sup>)/({deflMod}xExI)</p>
+              <p>(FxL<sup>3</sup>)/({deflMod}xExI)</p>
               <p className={`value ${failClass()}`}><strong>{calcObject.deflection}mm</strong></p>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Results = ({beam, calcObject, deflMod, stressMod}) => {
           <div className="calc-wrapper">
             <p className="calc-label">Max. Stress:</p>
             <div className="calc">
-              <p>(WL)/({stressMod}xZ)</p>
+              <p>(FxL)/({stressMod}xZ)</p>
               <p className={`value ${failClass()}`}><strong>{calcObject.stress}MPa</strong></p>
             </div>
           </div>
