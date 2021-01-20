@@ -3,7 +3,8 @@
     align-items: center;
     height: 87vh;
     width: 90%;
-    margin: 0 auto
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .start-button {
@@ -21,4 +22,8 @@
 
 .start-button:hover {
     background-color: var(--hover);
+}
+
+.info {
+    margin: 0 auto;
 }

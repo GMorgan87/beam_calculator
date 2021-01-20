@@ -21,6 +21,7 @@ useEffect(() => {
   return (
     <div className="landing">
         <button className="start-button" onClick={handleStart} disabled={!loaded}>{btnText}</button>
+        <p className="info">loading may take up to 30 seconds while api is launched</p>
     </div>
   )
 }
